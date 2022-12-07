@@ -1,5 +1,82 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class Grafo{
+    private static List<Vertice> listaVertice = null;
+    private final List<Aresta> listaAresta;
+    private final boolean orientado;
+
+    public Grafo(boolean orientado) {
+        this.listaVertice = new ArrayList<Vertice>();
+        this.listaAresta = new ArrayList<Aresta>();
+        this.orientado = orientado;
+    }
+
+    // retorna True se o grafo for orientado ou False se for não orientado
+    public boolean grafoOrientado(){
+        return this.orientado;
+    }
+
+    public List<Vertice> getListaVertice(){
+        return new ArrayList<Vertice>(this.listaVertice);
+    }
+
+    public List<Aresta> getListaAresta(){
+        return this.listaAresta;
+    }
+
+    public boolean contemVertice(Vertice v){
+        return listaVertice.contains(v);
+    }
+
+    public Vertice adicionaVertice(String nome){
+        Vertice v = new Vertice(nome);
+        this.listaVertice.add(v);
+        return v;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 public class Grafo {
     public static final int MAX = 10;
 
@@ -108,3 +185,4 @@ public class Grafo {
     }
 
 }
+*/
